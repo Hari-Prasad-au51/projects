@@ -18,7 +18,7 @@ const HomePage = () => {
           withCredentials: true,
         });
        
-        console.log(response);
+        console.log(response.data.user);
         if (response.data.success===true) {
           setUser(response.data.user);
           

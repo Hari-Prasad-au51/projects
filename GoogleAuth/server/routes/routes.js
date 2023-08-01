@@ -21,14 +21,14 @@ else{
 })
 
 
-router.get("/login/failed",(req,res)=>{
+// router.get("/login/failed",(req,res)=>{
   
-  res.status(401).json({
-    success:false,
-    message:"failure"
-  });
+//   res.status(401).json({
+//     success:false,
+//     message:"failure"
+//   });
 
-})
+// })
 
 router.get("/logout", (req, res) => {
   req.logout((err) => {
@@ -46,7 +46,7 @@ router.get("/google",passport.authenticate("google",{scope:["profile","email"]})
 router.get('/google/callback',
   passport.authenticate('google', { 
     successRedirect:"http://localhost:3000/home",
-    failureRedirect: '/login/failed'
+    failureRedirect: 'http://localhost:3000/login/failed'
    
  }));
 
