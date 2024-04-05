@@ -9,12 +9,20 @@ const session = require("express-session");
 require('dotenv').config();
 
 // Connect to MongoDB
-const mongoUser = process.env.MONGO_USER;
-const mongoPass = process.env.MONGO_PASS;
-const dbUrl = `mongodb+srv://${mongoUser}:${mongoPass}@cluster0.mor8vos.mongodb.net/googleauth?retryWrites=true&w=majority`;
-mongoose.connect(dbUrl, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log("Connected to MongoDB"))
-  .catch(error => console.error("MongoDB Connection Error:", error));
+// const mongoUser = process.env.MONGO_USER;
+// const mongoPass = process.env.MONGO_PASS;
+// const dbUrl = `mongodb+srv://${mongoUser}:${mongoPass}@cluster0.mor8vos.mongodb.net/googleauth?retryWrites=true&w=majority`;
+mongoose
+  .connect(process.env.mongoUrl, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  })
+  .then(() => {
+    console.log('connected to DB')
+  })
+  .catch((err) => {
+    console.log(err.message)
+  })
 
 // Configure CORS
 app.use(cors({
@@ -46,7 +54,7 @@ const routersuser = require("./routes/routes.js");
 app.use("/auth", routersuser);
 
 // Start the server
-const port = 8000;
+const port = 8800;
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });

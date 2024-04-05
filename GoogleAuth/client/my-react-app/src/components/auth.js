@@ -7,7 +7,7 @@ import googlepic from "../images/sign-in-with-google-icon-19.jpg"
 const GoogleAuth = () => {
  
   const google=()=>{
-    window.open("http://localhost:8000/auth/google","_self")
+    window.open("http://localhost:8800/auth/google","_self")
   }
 
   return (

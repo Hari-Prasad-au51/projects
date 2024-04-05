@@ -2,7 +2,7 @@ require('dotenv').config();
 const Google_client_id = process.env.Google_client_id;
 const Google_client_secret = process.env.Google_client_secret;
 
-
+console.log(Google_client_id, Google_client_secret)
 
 const passport = require('passport');
 const User = require('./models/auth');

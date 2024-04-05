@@ -8,7 +8,7 @@ import Navbar from 'react-bootstrap/Navbar';
 const NavigationBar = () => {
   const { user } = useContext(UserContext);
   const logout=()=>{
-    window.open("http://localhost:8000/auth/logout","_self")
+    window.open("http://localhost:8800/auth/logout","_self")
   }
   return (
     <>

@@ -14,7 +14,7 @@ const HomePage = () => {
     
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:8000/auth/login/success', {
+        const response = await axios.get('http://localhost:8800/auth/login/success', {
           withCredentials: true,
         });
        
